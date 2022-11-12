@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className='bg-secondary-800/25 p-5 sticky top-0'>
+    <div className='dark:bg-secondary-800 bg-primary-500 p-5 sticky top-0'>
       <h1>Hey</h1>
       <Toggler isActive={isModeDark} onChange={toggleOnChange} />
     </div>
