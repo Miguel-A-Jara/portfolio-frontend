@@ -14,7 +14,7 @@ const NavbarLinkButton = ({ children, text }: Props) => {
       >
         { children }
       </button>
-      <span className='absolute left-0 w-36 py-2 mx-2 rounded-md text-center transition-all duration-300
+      <span className='absolute left-0 w-max p-2 mx-2 rounded-md text-center transition-all duration-300
       bg-black/70 -z-10 opacity-0 dark:text-secondary-400 text-primary-300
       peer-hover:opacity-100 peer-focus:opacity-100 peer-hover:left-full peer-focus:left-full font-mono font-bold'
       >

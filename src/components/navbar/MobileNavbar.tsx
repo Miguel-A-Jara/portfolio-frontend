@@ -39,10 +39,10 @@ const MobileNavbar = () => {
       </div>
 
       <MobileNavbarBackground isNavOpen={isNavOpen} handleToggle={handleToggle} >
-        <ul className='w-full flex flex-col flex-1 justify-between'>
+        <ul className='w-full flex flex-col justify-between gap-4'>
           {
             navbarLinkInfo.map(i => (
-              <MobileNavbarLinkButton text={t(i.text)} >
+              <MobileNavbarLinkButton text={t(i.text)} handleToggle={handleToggle}>
                 <i className={i.iconClass} />
               </MobileNavbarLinkButton>
             ))
