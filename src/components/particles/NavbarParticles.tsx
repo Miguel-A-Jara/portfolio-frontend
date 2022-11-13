@@ -21,7 +21,7 @@ const NavbarParticles = () => {
   return (
     <Particles
       id={myId}
-      className='opacity-50 absolute h-full w-full -z-10'
+      className='opacity-40 absolute h-full w-full -z-10'
       init={particlesInit}
       options={{ fullScreen: { enable: false, zIndex: 10 }, ...options }}
     />
