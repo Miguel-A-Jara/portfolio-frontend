@@ -1,5 +1,3 @@
-import i18n from '../translations/i18next';
-
 const navbarLinkInfo = [
   {
     text: 'navbarLinkButtons.about-me',

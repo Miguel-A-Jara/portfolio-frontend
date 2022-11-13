@@ -14,7 +14,7 @@ const MobileNavbarBackground = ({ children, isNavOpen, handleToggle }: Props) =>
     <>
       <div className={
         `lg:hidden flex flex-col gap-4 justify-between items-end p-3 z-50 fixed h-full w-[100vw] max-w-3xl 
-        transition-all duration-300 sm:overflow-scroll
+        transition-all duration-300 sm:overflow-y-auto
         dark:bg-secondary-800 bg-primary-500
         ${isNavOpen ? 'left-0 opacity-100' : '-left-full opacity-0'}`
       }>

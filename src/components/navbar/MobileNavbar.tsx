@@ -5,7 +5,7 @@ import useScrollPage from '../../hooks/useScrollPage';
 import { useTranslation } from 'react-i18next';
 
 import NavbarParticles from '../particles/NavbarParticles';
-import navbarLinkInfo  from '../../utils/NavbarLinkInfo';
+import navbarLinkInfo  from '../../utils/navbarLinkInfo';
 
 import Toggler from '../input/Toggler';
 import HamburgerButton  from '../buttons/HamburgerButton';
@@ -42,7 +42,7 @@ const MobileNavbar = () => {
         <ul className='w-full flex flex-col justify-between gap-4'>
           {
             navbarLinkInfo.map(i => (
-              <MobileNavbarLinkButton text={t(i.text)} handleToggle={handleToggle}>
+              <MobileNavbarLinkButton key={i.text} text={t(i.text)} handleToggle={handleToggle}>
                 <i className={i.iconClass} />
               </MobileNavbarLinkButton>
             ))

@@ -5,7 +5,7 @@ import NavbarParticles  from '../particles/NavbarParticles';
 import NavbarLinkButton from '../buttons/NavbarLinkButton';
 
 import useDarkMode    from '../../hooks/useDarkMode';
-import navbarLinkInfo from '../../utils/NavbarLinkInfo';
+import navbarLinkInfo from '../../utils/navbarLinkInfo';
 import ChangeLanguageButton from '../buttons/ChangeLanguageButton';
 
 const Navbar = () => {
@@ -25,7 +25,7 @@ const Navbar = () => {
       <ul className='flex flex-col justify-between gap-10'>
         {
           navbarLinkInfo.map(i => (
-            <NavbarLinkButton text={t(i.text)} >
+            <NavbarLinkButton key={i.text} text={t(i.text)} >
               <i className={i.iconClass} />
             </NavbarLinkButton>
           ))
