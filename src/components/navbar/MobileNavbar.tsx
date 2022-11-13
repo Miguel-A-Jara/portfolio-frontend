@@ -6,6 +6,8 @@ import HamburgerButton from '../buttons/HamburgerButton';
 
 import useDarkMode   from '../../hooks/useDarkMode';
 import useScrollPage from '../../hooks/useScrollPage';
+import NavbarParticles from '../particles/NavbarParticles';
+import MobileNavbarBackground from './MobileNavbarBackground';
 
 const MobileNavbar = () => {
 
@@ -24,21 +26,17 @@ const MobileNavbar = () => {
 
   return (
     <>
-      <div className='flex items-center justify-between flex-row-reverse p-4 lg:hidden fixed bottom-0 h-16 w-[100vw]
+      <div className='flex items-center justify-between flex-row-reverse px-7 lg:hidden fixed bottom-0 h-16 w-[100vw]
       dark:bg-secondary-800 bg-primary-500 text-2xl z-10'
       >
         <HamburgerButton handleToggle={handleToggle} />
         <Toggler isActive={isDarkTheme} onChange={toggleOnChange} />
+        <NavbarParticles />
       </div>
 
-      {/* Navbar Opened Container */}
-      <div className={
-        `lg:hidden flex flex-col-reverse items-end p-3 z-20 fixed h-[100vh] w-[100vw] transition-all duration-300
-        dark:bg-secondary-800 bg-primary-200
-        ${isNavOpen ? 'left-0 opacity-100' : '-left-full opacity-0'}`}
-      >
-        <CloseButton handleToggle={handleToggle} />
-      </div>
+      <MobileNavbarBackground isNavOpen={isNavOpen} handleToggle={handleToggle} >
+        <NavbarParticles />
+      </MobileNavbarBackground>
     </>
   )
 }

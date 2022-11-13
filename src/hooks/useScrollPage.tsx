@@ -8,6 +8,7 @@ const useScrollPage = () => {
     
     //Toggle the scroll mode from HTML
     const mainHTML = document.querySelector('html');
+
     if ( !isPageScrollable ) mainHTML!.style.overflow = 'hidden';
     if ( isPageScrollable ) mainHTML!.style.overflowY = 'scroll';
 
