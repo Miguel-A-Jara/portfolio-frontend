@@ -10,10 +10,10 @@ const useScrollPage = () => {
     const mainHTML = document.querySelector('html');
 
     if ( !isPageScrollable ) mainHTML!.style.overflow = 'hidden';
-    if ( isPageScrollable ) mainHTML!.style.overflowY = 'scroll';
+    if ( isPageScrollable ) mainHTML!.style.overflowY = 'visible';
 
     return () => {
-      mainHTML!.style.overflowY = 'scroll'
+      mainHTML!.style.overflowY = 'visible'
     };
 
   }, [isPageScrollable]);

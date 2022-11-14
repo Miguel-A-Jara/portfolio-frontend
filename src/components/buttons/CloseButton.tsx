@@ -8,7 +8,7 @@ const CloseButton = ({ handleToggle }: Props) => {
       className='
         w-10 h-10 flex items-center justify-center rounded-full
         dark:bg-secondary-900 bg-primary-900 dark:text-secondary-600 text-primary-500
-        active:scale-90 transition-all duration-300'
+        active:scale-90 transition-all duration-300 mt-auto'
       onClick={handleToggle} 
     >
       <i className='fa-solid fa-xmark text-2xl'/>

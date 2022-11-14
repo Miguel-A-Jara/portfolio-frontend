@@ -1,7 +1,7 @@
 import { Canvas } from '@react-three/fiber';
 
 interface Props {
-  children: React.ReactElement;
+  children: React.ReactElement | React.ReactElement[];
   className: string;
 };
 

@@ -14,7 +14,7 @@ const Home = () => {
         ? <Navbar />
         : <MobileNavbar />
       }
-      <main className='mb-16 lg:mb-0 lg:ml-28 -z-20'>
+      <main className='lg:mb-0 lg:ml-28 -z-20'>
         <AboutMe />
       </main>
     </div>
