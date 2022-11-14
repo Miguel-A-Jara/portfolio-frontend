@@ -24,6 +24,7 @@ const AboutMe = () => {
   return (
     <div className='h-[100vh] flex flex-col gap-4 top-0
       items-center lg:items-center justify-center px-6 sticky overflow-hidden text-center'
+      id='about-me'
     >
       <h1 className='font-mono font-bold text-7xl text-center dark:text-secondary-400'>
         {translatedData?.title}
@@ -41,7 +42,7 @@ const AboutMe = () => {
         <MySphere />
       </CanvasContainer>
       <CanvasContainer className='absolute w-64 h-64 bottom-0 right-[calc(100%-10em)] lg:-right-20 -z-20
-      -rotate-12 opacity-60 lg:top-0'
+        -rotate-12 opacity-60 lg:top-0'
       >
         <MyPrisma />
       </CanvasContainer>

@@ -2,11 +2,12 @@ interface Props {
   children: React.ReactElement;
   text: string;
   handleToggle: () => void;
+  link: string;
 }
 
-const MobileNavbarLinkButton = ({ children, text, handleToggle }: Props) => {
+const MobileNavbarLinkButton = ({ children, text, handleToggle, link }: Props) => {
   return (
-    <li className='relative flex items-center' onClick={handleToggle}>
+    <a className='relative flex items-center' onClick={handleToggle} href={link}>
       <button className='text-3xl rounded-3xl w-full h-16 transition-all duration-300 px-2 sm:px-4
         bg-black/30 border-4 dark:border-secondary-400 border-primary-400 dark:text-secondary-400 text-primary-300
         hover:rounded-md hover:bg-black/20 hover:dark:text-secondary-300 hover:text-primary-200
@@ -18,7 +19,7 @@ const MobileNavbarLinkButton = ({ children, text, handleToggle }: Props) => {
           {text}
         </p>
       </button>
-    </li>
+    </a>
   )
 }
 

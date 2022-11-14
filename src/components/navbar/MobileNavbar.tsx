@@ -42,7 +42,7 @@ const MobileNavbar = () => {
         <ul className='w-full flex flex-col justify-between gap-4 my-auto'>
           {
             navbarLinkInfo.map(i => (
-              <MobileNavbarLinkButton key={i.text} text={t(i.text)} handleToggle={handleToggle}>
+              <MobileNavbarLinkButton key={i.text} link={i.link} text={t(i.text)} handleToggle={handleToggle}>
                 <i className={i.iconClass} />
               </MobileNavbarLinkButton>
             ))
