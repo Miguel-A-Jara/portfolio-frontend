@@ -1,20 +1,20 @@
 import axios from 'axios';
 
-const appFetch = async (url: string) => {
+const appFetch = async <T, >(url: string) => {
 
   try {
 
-    const { data } = await axios.get(url);
+    const { data } = await axios.get<T>(url);
     return data;
 
   } catch (error) {
 
     if(axios.isAxiosError(error)) {
       console.log('Error message: ', error.message);
-      return new Error(error.message);
+      throw new Error(error.message);
     }
     console.log('Unexpected error message: ', error);
-    return new Error('An unexpected error occurred: ');
+    throw new Error(`An unexpected error occurred: ${JSON.stringify(error, null, 3)}`);
     
   };
 };

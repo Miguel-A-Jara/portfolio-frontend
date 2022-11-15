@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
 
 interface Props {
@@ -7,11 +8,18 @@ interface Props {
 
 const CanvasContainer = ({ children, className }: Props) => {
   return (
-    <div className={className} >
+    <motion.div 
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: 1 }}
+      transition={{ duration: 3 }} 
+      drag
+      dragConstraints={{ left: 10, top: 0, right: 10, bottom: 0 }}
+      className={className}
+    >
       <Canvas>
         { children }
       </Canvas>
-    </div>
+    </motion.div>
   )
 }
 

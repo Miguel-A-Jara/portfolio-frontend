@@ -6,4 +6,8 @@
   body {
     font-family: 'Montserrat';
   }
+
+  ::selection {
+    @apply dark:bg-secondary-500 dark:text-secondary-900 bg-primary-600 text-primary-50
+  }
 }

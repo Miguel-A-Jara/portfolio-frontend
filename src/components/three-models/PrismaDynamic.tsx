@@ -1,11 +1,12 @@
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 import { Sphere, OrbitControls, MeshDistortMaterial } from '@react-three/drei';
 
 import useDarkMode from '../../hooks/useDarkMode';
 
-const MySphere = () => {
+const PrismaDynamic = () => {
 
   const { isDarkTheme } = useDarkMode();
+  const [value, setValue] = useState(Math.random() * 4);
 
   return (
     <>
@@ -14,17 +15,17 @@ const MySphere = () => {
       <Suspense fallback={null}>
         <Sphere
           visible
-          args={[1, 8, 8]}
-          scale={3}
+          args={[0.5, value, value]}
+          scale={4}
         >
-          <meshPhysicalMaterial
+          <MeshDistortMaterial 
             color={isDarkTheme ? '#147ba6' : '#007c5b'}
             wireframe
+            speed={1}
           />
           <OrbitControls
-            enableRotate={false}
-            autoRotate={true} 
-            autoRotateSpeed={2} 
+            autoRotate={true}
+            autoRotateSpeed={Math.random() > 0.5 ? -5 : 5} /* Randomly setting the direction */
             enableZoom={false} 
           />
         </Sphere>
@@ -33,4 +34,4 @@ const MySphere = () => {
   )
 }
 
-export default MySphere;
+export default PrismaDynamic;

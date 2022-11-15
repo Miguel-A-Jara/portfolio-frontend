@@ -19,8 +19,9 @@ const useAboutMe = () => {
     throw new Error('No prefix was found in the environment variables');
   }
 
-  const { isLoading, isError, data, error } = useQuery<unknown, unknown, IAboutMe[]>(['about-me'], 
-    () => appFetch(`${URL_PREFIX}/AboutMe`)
+  const { isLoading, isError, data, error } = useQuery(['about-me'], 
+    () => appFetch<IAboutMe[]>(`${URL_PREFIX}/AboutMe`),
+    { refetchOnWindowFocus: false }
   );
 
   return { isLoading, isError, data, error };
