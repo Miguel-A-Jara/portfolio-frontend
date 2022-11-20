@@ -52,14 +52,16 @@ const TechnologyModalCarrousel = ({ data }: Props) => {
         {
           data?.images.map(image => (
             <SwiperSlide key={image.url}>
-              <Image 
-                src={`${IMG_PREFIX}${image.url}`}
-                alt={image.alternative_text}
-                title={image.alternative_text}
-                className='object-contain'
-                width={image.width}
-                height={image.height}
-              />
+              {
+                <Image 
+                  src={`${IMG_PREFIX}${image.url}`}
+                  alt={image.alternative_text}
+                  title={image.alternative_text}
+                  className='object-contain'
+                  width={image.width}
+                  height={image.height}
+                />
+              }
             </SwiperSlide>
           ))
         }

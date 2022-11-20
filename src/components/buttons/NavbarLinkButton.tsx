@@ -12,7 +12,9 @@ const NavbarLinkButton = ({ children, text, link }: Props) => {
   const { isModalOpen } = useContext(ModalContext);
 
   return (
-    <a className={`relative flex items-center ${isModalOpen && 'pointer-events-none'}`} href={link}>
+    <a 
+      className={`relative flex items-center max-w-[4rem] ${isModalOpen && 'pointer-events-none'}`} 
+      href={link}>
       <button className='text-3xl rounded-3xl w-16 h-16 transition-all duration-300
         bg-black/30 border-4 dark:border-secondary-400 border-primary-400 dark:text-secondary-400 text-primary-300
         hover:rounded-md hover:bg-black/20 hover:dark:text-secondary-300 hover:text-primary-200

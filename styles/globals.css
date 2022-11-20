@@ -12,4 +12,14 @@
   ::selection {
     @apply dark:bg-secondary-500 dark:text-secondary-900 bg-primary-600 text-primary-50
   }
+
+  ::-webkit-scrollbar {
+    @apply dark:bg-secondary-900 bg-primary-700
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply dark:bg-secondary-400 bg-primary-300 active:dark:bg-secondary-500 hover:dark:bg-secondary-500  
+    active:bg-primary-400 hover:bg-primary-400
+  }
+
 }

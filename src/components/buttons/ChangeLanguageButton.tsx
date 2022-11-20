@@ -10,7 +10,7 @@ const ChangeLanguageButton = () => {
   const [t, i18n] = useTranslation('translation');
 
   return (
-    <div className='bg-black/25 flex rounded-2xl overflow-hidden w-full min-h-[40px]'>
+    <div className='bg-black/25 flex rounded-2xl overflow-hidden w-full min-h-[40px] lg:mb-4'>
       <button 
         className={
           `w-full py-2 flex items-center justify-center transition-all duration-300

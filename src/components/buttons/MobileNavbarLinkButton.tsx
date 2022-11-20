@@ -32,7 +32,7 @@ const MobileNavbarLinkButton = ({ children, text, handleToggle, link }: Props) =
       </button>
 
       <div 
-        className={`bg-black/70 rounded-3xl top-0 left-0 bottom-0 right-0 absolute transition-transform duration-500
+        className={`bg-black/50 rounded-3xl top-0 left-0 bottom-0 right-0 absolute transition-transform duration-500
           ${isModalOpen ? 'scale-100' : 'scale-0'}`
         }
       />
