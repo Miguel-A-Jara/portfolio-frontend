@@ -1,20 +1,28 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const useScrollPage = () => {
   
+  const isFirstRender = useRef(true);
   const [isPageScrollable, setIsPageScrollable] = useState(true);
 
   useEffect(() => {
     
-    //Toggle the scroll mode from HTML
-    const mainHTML = document.querySelector('html');
+    const mainHTML = document.querySelector('html'); //Toggle the scroll mode from HTML
+    const scrollBarWidth = window.innerWidth - document.body.clientWidth; //Getting the scrollbar's width
 
-    if ( !isPageScrollable ) mainHTML!.style.overflow = 'hidden';
-    if ( isPageScrollable ) mainHTML!.style.overflowY = 'visible';
+    if(isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
 
-    return () => {
-      mainHTML!.style.overflowY = 'visible'
-    };
+    if(!isFirstRender.current) {
+
+      mainHTML!.style.overflowY =
+        mainHTML?.style.overflowY === 'hidden' ? 'auto' : 'hidden';
+
+      mainHTML!.style.paddingRight =
+        mainHTML?.style.overflowY === 'hidden' ? `${scrollBarWidth}px` : '0px';
+    }
 
   }, [isPageScrollable]);
 

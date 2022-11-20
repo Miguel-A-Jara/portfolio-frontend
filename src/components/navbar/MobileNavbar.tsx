@@ -35,7 +35,7 @@ const MobileNavbar = () => {
       >
         <HamburgerButton handleToggle={handleToggle} />
         <Toggler isActive={isDarkTheme} onChange={toggleOnChange} />
-        <NavbarParticles />
+        {/* <NavbarParticles /> */}
       </div>
 
       <MobileNavbarBackground isNavOpen={isNavOpen} handleToggle={handleToggle} >

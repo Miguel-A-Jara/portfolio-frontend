@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-  body {
+
+  html, body {
     font-family: 'Montserrat';
+    scroll-behavior: smooth;
   }
 
   ::selection {

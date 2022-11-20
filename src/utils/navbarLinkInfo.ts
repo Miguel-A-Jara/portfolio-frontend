@@ -7,7 +7,7 @@ const navbarLinkInfo = [
   {
     text: 'navbarLinkButtons.technologies',
     iconClass: 'fa-solid fa-code',
-    link: '#about-me'
+    link: '#technologies'
   },
   {
     text: 'navbarLinkButtons.companies',

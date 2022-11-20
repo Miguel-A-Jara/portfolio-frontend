@@ -24,7 +24,7 @@ const ErrorModal = ({ error, isError }: Props) => {
       >
         { error }
         <span className='w-8 h-8 rounded-full transition-all duration-300
-         dark:text-secondary-900 text-red-200 bg-red-500 absolute -top-4 -left-4'>
+         dark:text-secondary-900 text-red-200 bg-red-500 absolute -top-4 -left-4 flex items-center justify-center'>
           <i className='fa-solid fa-xmark text-2xl'/>
         </span>
       </motion.div>

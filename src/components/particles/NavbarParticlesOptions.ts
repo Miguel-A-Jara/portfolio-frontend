@@ -2,9 +2,9 @@ const navbarParticlesOptions = (isDarkTheme: boolean) => {
   const options = {
     particles: {
       number: {
-        value: 100,
+        value: 50,
         density: {
-          enable: true,
+          enable: false,
           area: 400
         }
       },

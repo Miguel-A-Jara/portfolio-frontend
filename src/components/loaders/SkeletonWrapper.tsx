@@ -4,10 +4,11 @@ import 'react-loading-skeleton/dist/skeleton.css'
 import useDarkMode from '../../hooks/useDarkMode';
 
 interface Props {
-  count?: number;
+  count    ?: number;
+  minHeight?: number;
 }
 
-const SkeletonWrapper = ({ count }: Props) => {
+const SkeletonWrapper = ({ count, minHeight }: Props) => {
 
   const { isDarkTheme } = useDarkMode();
 
@@ -15,6 +16,7 @@ const SkeletonWrapper = ({ count }: Props) => {
     <>
       <Skeleton 
         enableAnimation 
+        className={`min-h-[${minHeight}px]`}
         count={count}
         baseColor={ isDarkTheme ? '#032233' : '#2fd89c' }
         highlightColor={ isDarkTheme ? '#036686' : '#6aebba' }
