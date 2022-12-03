@@ -2,6 +2,7 @@ import SkeletonWrapper         from '../loaders/SkeletonWrapper';
 import useTechnologiesInfo     from '../../hooks/fetchHooks/useTechnologiesInfo';
 import TechnologyModalMarkdown from '../markdown/TechnologyModalMarkdown';
 import TechnologyModalCarrousel from '../carrousel/TechnologyModalCarrousel';
+import { useEffect } from 'react';
 
 interface Props {
   id      : number;
@@ -10,7 +11,7 @@ interface Props {
 
 const TechnologyInfoModalContainer = ({ id, techType }: Props) => {
 
-  const { data, isError, error, isLoading } = useTechnologiesInfo(id, techType);
+  const { data } = useTechnologiesInfo(id, techType);
 
   return (
     <div className='w-full h-[90vh] lg:h-full flex flex-wrap items-center gap-8 p-8 sm:p-14 relative z-50 overflow-y-auto'>

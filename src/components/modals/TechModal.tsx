@@ -12,13 +12,15 @@ interface Props {
 
 const TechModal = ({ id, techType }: Props) => {
 
+  const techModalId = `${id}${techType}`;
+
   const { dispatch, isModalOpen, modalId } = useContext(ModalContext);
   const { isPageScrollable, setIsPageScrollable } = useScrollPage();
 
   const handleToggle = () => {
     if(dispatch)
       dispatch({ 
-        payload: id, 
+        payload: techModalId, 
         type: isModalOpen ? 'CLOSE_MODAL' : 'OPEN_MODAL' 
       })
     setIsPageScrollable(!isPageScrollable);
@@ -27,16 +29,15 @@ const TechModal = ({ id, techType }: Props) => {
   return (
     <>
       {
-        (isModalOpen && modalId === id) && 
+        (isModalOpen && modalId === techModalId) && 
           <div 
-            className='fixed inset-0 bg-black/75 z-10 backdrop-blur cursor-pointer' 
+            className='fixed inset-0 bg-black/70 z-10 backdrop-blur-sm cursor-pointer' 
             onClick={handleToggle} 
           />
       }
-
       <AnimatePresence>
         {
-          (isModalOpen && modalId === id) && 
+          (isModalOpen && modalId === techModalId) && 
             <motion.div
               initial={{ translateY: '100vh', scale: 0 }}
               animate={{ translateY: 0, scale: 1 }}

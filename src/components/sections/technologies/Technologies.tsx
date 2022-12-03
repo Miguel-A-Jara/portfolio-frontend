@@ -12,7 +12,7 @@ const Technologies = () => {
 
   return (
     <div className='min-h-[100vh] flex flex-col gap-4 top-0 py-10
-      items-center justify-center px-6 sticky overflow-hidden text-center bg-black'
+      items-center justify-center px-6 sticky text-center bg-black'
     >
       <h3 className='font-bold text-5xl lg:text-7xl text-center dark:text-secondary-400 text-primary-500 w-full max-w-3xl'>
         { t('technologies.title') }

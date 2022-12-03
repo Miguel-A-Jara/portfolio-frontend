@@ -46,18 +46,18 @@ const TechnologyModalCarrousel = ({ data }: Props) => {
         centeredSlides={true}
         autoplay={{delay: 4000}}
         pagination={{ clickable: true }}
-        className='max-w-[250px] sm:max-w-sm md:max-w-md lg:max-w-2xl rounded-xl'
+        className='max-w-[250px] sm:max-w-sm md:max-w-md lg:max-w-2xl'
         onBeforeInit={(swiper) => swiperRef.current = swiper}
       >
         {
           data?.images.map(image => (
-            <SwiperSlide key={image.url}>
+            <SwiperSlide key={image.url} className='w-full h-full mt-auto mb-auto'>
               {
                 <Image 
                   src={`${IMG_PREFIX}${image.url}`}
                   alt={image.alternative_text}
                   title={image.alternative_text}
-                  className='object-contain'
+                  className='object-contain mx-auto rounded-xl'
                   width={image.width}
                   height={image.height}
                 />

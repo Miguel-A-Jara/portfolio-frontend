@@ -11,8 +11,8 @@ interface TModalState {
 }
 
 type TAction = 
-  | { type: 'OPEN_MODAL', payload: string | number }
-  | { type: 'CLOSE_MODAL', payload: string | number };
+  | { type: 'OPEN_MODAL', payload: string }
+  | { type: 'CLOSE_MODAL', payload: string };
 
 const initValue: TModalState = {
   isModalOpen: false,

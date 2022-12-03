@@ -11,7 +11,7 @@ interface Props {
 
 const MobileNavbarBackground = ({ children, isNavOpen, handleToggle }: Props) => {
   return (
-    <>
+    <div className='relative z-[100]'>
       <div className={
         `lg:hidden flex flex-col gap-4 justify-between items-end p-3 z-50 fixed h-full w-[100vw] max-w-3xl 
         transition-all duration-300 overflow-y-auto
@@ -24,7 +24,7 @@ const MobileNavbarBackground = ({ children, isNavOpen, handleToggle }: Props) =>
         <CloseButton handleToggle={handleToggle} />
       </div>
       <MobileNavbarShadow handleToggle={handleToggle} isNavOpen={isNavOpen} />
-    </>
+    </div>
   )
 }
 
