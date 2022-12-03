@@ -52,7 +52,7 @@ const TechModal = ({ id, techType }: Props) => {
                 <button 
                   className='lg:hidden flex justify-center items-center gap-5 w-full p-2 text-3xl shadow-md border-b-2
                   dark:text-secondary-500 text-primary-400 dark:border-secondary-500 border-primary-400 
-                  dark:shadow-secondary-500/30 shadow-primary-400/30 transition-all duration-300'
+                  dark:shadow-secondary-500/30 shadow-primary-400/30 transition-all duration-300 filter-none'
                   onClick={handleToggle}>
                   <i className='fa-sharp fa-solid fa-xmark' />
                 </button>
