@@ -16,12 +16,14 @@ const validateSqlInjection = (value: string | undefined): boolean => {
 const contactFormSchema = yup.object<TSchema>({
   name: yup
     .string()
+    .transform((val: string) => val.trim())
     .required('contactValidation.name.req')
     .min(3, 'contactValidation.name.min')
     .max(30, 'contactValidation.name.max'),
 
   email: yup
     .string()
+    .transform((val: string) => val.trim())
     .email('contactValidation.email.val')
     .required('contactValidation.email.req')
     .min(5, 'contactValidation.email.min')
@@ -35,6 +37,7 @@ const contactFormSchema = yup.object<TSchema>({
 
   message: yup
     .string()
+    .transform((val: string) => val.trim())
     .required('contactValidation.message.req')
     .min(5, 'contactValidation.message.min')
     .max(50, 'contactValidation.message.max')
