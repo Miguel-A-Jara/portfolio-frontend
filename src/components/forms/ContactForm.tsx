@@ -14,7 +14,7 @@ const ContactForm = () => {
 
   const [t, i18n] = useTranslation();
 
-  const { register, handleSubmit, formState: { errors }, control } = useForm<Partial<IContactForm>>({
+  const { register, handleSubmit, formState: { errors, isValid }, control } = useForm<Partial<IContactForm>>({
     mode: 'onChange',
     resolver: yupResolver( contactFormSchema )
   });
@@ -26,8 +26,8 @@ const ContactForm = () => {
   return (
     <form 
       onSubmit={ handleSubmit(submitForm) }
-      className='w-full lg:w-1/2 dark:text-secondary-800 text-primary-600
-      lg:p-8 rounded-md transition-colors duration-300 flex flex-col gap-8'
+      className='w-full lg:w-1/2 xl:w-3/4 dark:text-secondary-800 text-primary-600
+      lg:px-8 rounded-md transition-colors duration-300 flex flex-col gap-8'
     >
       {/* This syntax is a Generic React Component */}
       <TextInput<IContactForm>
@@ -58,7 +58,16 @@ const ContactForm = () => {
         name='isGoogleAccepted'
       />
 
-      <button className='bg-secondary-600 p-4 rounded-lg text-3xl'>Send</button>
+      <button 
+        disabled={!isValid}
+        className={`border-2 px-4 py-2 text-3xl w-min rounded-lg flex gap-2 items-center
+        dark:border-secondary-600 border-primary-500 dark:text-secondary-600 text-primary-500 bg-black/90
+        transition-all duration-400 ${isValid ? 'opacity-100 shadow-xl' : 'opacity-50 shadow-none'}
+        dark:shadow-secondary-600/30 shadow-primary-400/60`}
+      >
+        { i18n.language === 'en' ? 'Send' : 'Enviar' }
+        <i className='fa-solid fa-paper-plane text-2xl' />
+      </button>
     </form>
   )
 }

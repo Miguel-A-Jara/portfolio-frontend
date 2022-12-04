@@ -40,7 +40,7 @@ const contactFormSchema = yup.object<TSchema>({
     .transform((val: string) => val.trim())
     .required('contactValidation.message.req')
     .min(5, 'contactValidation.message.min')
-    .max(50, 'contactValidation.message.max')
+    .max(1000, 'contactValidation.message.max')
     .test('SQL_INJECTION', 'contactValidation.message.val', validateSqlInjection),
 });
 
