@@ -18,7 +18,7 @@ const TextAreaInput = <T, >({ register, name, placeholder, errors, type}: Props<
   const error = errors[name]?.message;
 
   return (
-    <div className='flex flex-col gap-2'>
+    <div className='flex flex-col gap-2 w-full'>
       <textarea
         autoComplete='off'
         {...register(name)}

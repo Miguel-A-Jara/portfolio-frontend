@@ -18,7 +18,7 @@ const TextInput = <T, >({ register, name, placeholder, errors, type}: Props<T>) 
   const error = errors[name]?.message;
 
   return (
-    <div className='flex flex-col gap-2'>
+    <div className='flex flex-col gap-2 w-full'>
       <input 
         autoComplete='off'
         type={type ?? 'text'}

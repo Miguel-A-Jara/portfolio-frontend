@@ -9,7 +9,7 @@ const ContactMe = () => {
   const [t, i18n] = useTranslation();
 
   return (
-    <div className='min-h-[100vh] flex flex-wrap gap-4 py-10 top-0 z-10 relative
+    <div className='min-h-[100vh] flex flex-wrap gap-8 py-10 top-0 z-10 relative
       items-start justify-center px-6 text-center dark:bg-secondary-900 bg-primary-900'
     >
 
