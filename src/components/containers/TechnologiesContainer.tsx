@@ -17,13 +17,11 @@ const TechnologiesContainer = ({ data, technologyType }: Props) => {
         data?.map((technology, idx) => (
           technology.technology_type === technologyType.toLowerCase()
           && (
-            <>
-              <TechnologyButton
-                idx={ idx }
-                data={ technology }
-                key={ technology.name }
-              />
-            </>
+            <TechnologyButton
+              idx={ idx }
+              data={ technology }
+              key={ technology.name }
+            />
           )
         ))
       }

@@ -16,5 +16,5 @@
     "req": "* Por favor, escriba un mensaje.",
     "val": "* No elimines mi base de datos!"
   },
-  "isGoogleAccepted": "Por favor, complete el captcha."
+  "isGoogleAccepted": "* Por favor, complete el captcha."
 }

@@ -3,8 +3,12 @@ import IContactForm from '../types/IContactForm';
 
 type TSchema = Record<keyof IContactForm, yup.AnySchema>;
 
-const validateSqlInjection = (value: string | undefined): boolean => {
+const validateCaptcha = (value: string | undefined | null): boolean => {
+  if(!value) return false;
+  return true;
+}
 
+const validateSqlInjection = (value: string | undefined): boolean => {
   if(value) return !value.toLowerCase().includes('delete * from');
   else return true;
 };
@@ -23,7 +27,11 @@ const contactFormSchema = yup.object<TSchema>({
     .min(5, 'contactValidation.email.min')
     .max(50, 'contactValidation.email.max'),
 
-  isGoogleAccepted: yup.boolean().required(),
+  isGoogleAccepted: yup
+    .string()
+    .nullable()
+    .required('contactValidation.isGoogleAccepted')
+    .test('goolge-captcha', 'contactValidation.isGoogleAccepted', validateCaptcha),
 
   message: yup
     .string()

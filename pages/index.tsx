@@ -24,7 +24,7 @@ const Home = () => {
           : <MobileNavbar />
         }
 
-        <main className='lg:mb-0 lg:ml-28 relative -z-10 lg:z-0'>
+        <main className='lg:mb-0 lg:ml-28 relative z-0'>
           <a id='about-me' className='absolute top-0'></a>
           <AboutMe />
 
