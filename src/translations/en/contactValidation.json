@@ -1,0 +1,20 @@
+{
+  "name": {
+    "min": "* Please, use a valid name (min. 3 characters).",
+    "max": "* Please, use a valid name (max. 30 characters).",
+    "req": "* Please, use a name."
+  },
+  "email": {
+    "min": "* Please, use a valid e-mail address (min. 5 characters).",
+    "max": "* Please, use a valid e-mail address (max. 50 characters).",
+    "req": "* Please, enter a valid e-mail address.",
+    "val": "* Please, enter a valid e-mail address."
+  },
+  "message": {
+    "min": "* Please, write a message (min. 3 characters).",
+    "max": "* Please, don't spam me! (max. 1000 characters).",
+    "req": "* Please, write a message.",
+    "val": "* Don't delete my database! You sneaky :)."
+  },
+  "isGoogleAccepted": "Please, complete the captcha."
+}

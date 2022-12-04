@@ -1,0 +1,20 @@
+{
+  "name": {
+    "min": "* Por favor, escriba un nombre válido (min. 3 carácteres).",
+    "max": "* Por favor, escriba un nombre válido (máx. 30 carácteres).",
+    "req": "* Por favor, escriba un nombre."
+  },
+  "email": {
+    "min": "* Por favor, use un e-mail válido (min. 5 carácteres).",
+    "max": "* Por favor, use un e-mail válido (máx. 50 carácteres).",
+    "req": "* Por favor, use un e-mail válido.",
+    "val": "* Por favor, use un e-mail válido."
+  },
+  "message": {
+    "min": "* Por favor, escriba un mensaje (min. 3 carácteres).",
+    "max": "* Por favor, no me haga spam! (máx. 1000 carácteres).",
+    "req": "* Por favor, escriba un mensaje.",
+    "val": "* No elimines mi base de datos!"
+  },
+  "isGoogleAccepted": "Por favor, complete el captcha."
+}

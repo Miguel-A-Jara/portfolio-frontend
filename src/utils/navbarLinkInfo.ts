@@ -22,7 +22,7 @@ const navbarLinkInfo = [
   {
     text: 'navbarLinkButtons.contact',
     iconClass: 'fa-solid fa-phone',
-    link: '#about-me'
+    link: '#contact'
   }
 ];
 

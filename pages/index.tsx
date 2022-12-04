@@ -4,6 +4,7 @@ import Navbar       from '../src/components/navbar/Navbar';
 import MobileNavbar from '../src/components/navbar/MobileNavbar';
 import AboutMe      from '../src/components/sections/about-me/AboutMe';
 import Technologies from '../src/components/sections/technologies/Technologies';
+import ContactMe    from '../src/components/sections/contact/ContactMe';
 
 import useWindowSize from '../src/hooks/useWindowSize';
 
@@ -23,13 +24,16 @@ const Home = () => {
           : <MobileNavbar />
         }
 
-        <main className='lg:mb-0 lg:ml-28 -z-20'>
+        <main className='lg:mb-0 lg:ml-28 relative -z-10 lg:z-0'>
           <a id='about-me' className='absolute top-0'></a>
           <AboutMe />
 
-
           <a id='technologies' className='absolute'></a>
           <Technologies />
+
+          <a id='contact' className='absolute'></a>
+          <ContactMe />
+
         </main>
       </div>
     </>
