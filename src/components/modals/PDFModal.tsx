@@ -32,28 +32,36 @@ const PDFModal = ({ URL, onClick, PDFname }: Props) => {
     <motion.div 
       initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 100, opacity: 0 }} 
       transition={{ duration: 0.3 }}
-      className='fixed inset-0 flex justify-center items-center'
+      className='fixed inset-0 flex flex-wrap justify-center items-center mb-16 lg:mb-0'
     >
       <div onClick={handleToggle} 
         className='fixed inset-0 bg-black/80 backdrop-blur flex justify-center items-center'
       />
 
       <div
-        className='min-w-[30%] h-[90%] dark:bg-secondary-800/70 bg-primary-400/70 overflow-auto p-4 rounded-lg
+        className='min-w-[30%] h-full md:h-[90%] dark:bg-secondary-800/70 bg-primary-400/70 rounded-lg
         transition-colors duration-300 z-10'
       >
-        <div className='bg-red-500 relative flex items-start justify-end'>
+        <button 
+          className='lg:hidden w-full flex justify-center items-center gap-5 p-2 text-3xl shadow-md
+          dark:text-secondary-500 text-primary-400 transition-all duration-300 filter-none bg-black/30'
+          onClick={handleToggle}>
+          <i className='fa-sharp fa-solid fa-xmark' />
+        </button>
+
+        <div className='relative flex flex-row-reverse'>
           <button onClick={handleDownload} className='fixed z-10 p-4 dark:bg-secondary-900 dark:text-secondary-500
-          bg-primary-300 text-primary-700 rounded-full w-12 h-12
+          bg-primary-300 text-primary-700 rounded-full w-12 h-12 mt-4 mr-4
           flex items-center justify-center transition-colors duration-300'>
             <i className='fa-solid fa-file-arrow-down text-2xl'/>
           </button>
         </div>
-        <Document file={PDF_URL}>
+        <Document file={PDF_URL} className='overflow-auto h-full'>
           <Page
             pageNumber={1}
             renderTextLayer={false}
             renderAnnotationLayer={false}
+            
           />
         </Document>
       </div>

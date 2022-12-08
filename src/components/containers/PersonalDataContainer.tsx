@@ -21,8 +21,7 @@ const PersonalDataContainer = () => {
 
   return (
     <>
-      <motion.div 
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1, delay: 1.3 }}
+      <div 
         className='flex flex-1 gap-2 flex-wrap border-2 p-4 rounded-lg transition-colors duration-300 max-w-sm
        dark:border-secondary-500 border-primary-400 dark:text-secondary-400 text-primary-400 bg-black/60'
       >
@@ -63,7 +62,7 @@ const PersonalDataContainer = () => {
         <AnimatePresence>
           {isCVModalOpen && <PDFModal onClick={toggleCVModal} URL={data?.cv_url} PDFname={data?.cv_title} />}
         </AnimatePresence>
-      </motion.div>
+      </div>
     </>
   )
 }
