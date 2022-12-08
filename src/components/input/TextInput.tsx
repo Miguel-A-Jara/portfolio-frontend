@@ -25,7 +25,7 @@ const TextInput = <T, >({ register, name, placeholder, errors, type}: Props<T>) 
         {...register(name)}
         placeholder={placeholder}
         className='text-2xl p-4 font-semibold rounded-md opacity-60 transition-all duration-300 
-        dark:bg-secondary-800/90 bg-primary-600/80 dark:text-secondary-400 text-primary-200 
+        dark:bg-secondary-800/90 bg-primary-200 dark:text-secondary-400 text-primary-800 
         focus:outline-0 placeholder:dark:text-secondary-500 placeholder:text-primary-400/50
         placeholder:capitalize focus:opacity-100'
       />
