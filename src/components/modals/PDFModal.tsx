@@ -61,7 +61,6 @@ const PDFModal = ({ URL, onClick, PDFname }: Props) => {
             pageNumber={1}
             renderTextLayer={false}
             renderAnnotationLayer={false}
-            
           />
         </Document>
       </div>

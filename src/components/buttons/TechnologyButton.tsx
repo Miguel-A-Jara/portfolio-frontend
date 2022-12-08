@@ -36,7 +36,7 @@ const TechnologyButton = ({ data, idx }: Props) => {
         whileInView={{ scale: 1 }} initial={{ scale: 0 }} transition={{ duration: 0.3, delay: idx * 0.025  }}
         onClick={handleToggle}>
         <div className={`w-32 h-32 flex items-center rounded-lg p-4 relative
-        dark:bg-secondary-900 bg-primary-900/50 transition-colors duration-300`}>
+        dark:bg-secondary-900 bg-primary-900/50 transition-colors duration-300 shadow-inner shadow-black`}>
           <Image
             src={`${IMG_PREFIX}${data.logo}`}
             width={ data.width }

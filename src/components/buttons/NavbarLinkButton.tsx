@@ -18,7 +18,7 @@ const NavbarLinkButton = ({ children, text, link }: Props) => {
       <button className='text-3xl rounded-3xl w-16 h-16 transition-all duration-300
         bg-black/30 border-4 dark:border-secondary-400 border-primary-400 dark:text-secondary-400 text-primary-300
         hover:rounded-md hover:bg-black/20 hover:dark:text-secondary-300 hover:text-primary-200
-        active:scale-90 focus:outline-none focus:scale-90 focus:rounded-md
+        active:scale-90 focus:outline-none focus:scale-90 focus:rounded-md shadow-inner dark:shadow-secondary-900 shadow-primary-900
         peer'
       >
         { children }

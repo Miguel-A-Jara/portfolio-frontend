@@ -7,8 +7,8 @@ const ClockTime = () => {
 
   return (
     <div className='w-full flex justify-between items-center overflow-y-hidden relative p-4 text-2xl font-bold 
-    bg-black/50 dark:text-secondary-400 text-primary-300 transition-all duration-300 rounded-lg'>
-      <div className='relative p-4 flex items-center justify-center w-full'>
+    bg-black/25 dark:text-secondary-400 text-primary-300 transition-all duration-300 rounded-lg shadow-inner shadow-black'>
+      <div className='relative p-4 flex items-center justify-center w-full font-orbitron'>
         <AnimatePresence>
           <motion.div 
             key={hours} 
@@ -24,7 +24,7 @@ const ClockTime = () => {
 
       <span>:</span>
 
-      <div className='relative p-4 flex items-center justify-center w-full'>
+      <div className='relative p-4 flex items-center justify-center w-full font-orbitron'>
       <AnimatePresence>
         <motion.div 
           key={minutes} 
@@ -40,7 +40,7 @@ const ClockTime = () => {
 
       <span>:</span>
 
-      <div className='relative p-4 flex items-center justify-center w-full'>
+      <div className='relative p-4 flex items-center justify-center w-full font-orbitron'>
         <AnimatePresence>
           <motion.div 
             className='absolute'
@@ -54,7 +54,7 @@ const ClockTime = () => {
         </AnimatePresence>
       </div>
 
-      <div className='relative p-4 flex items-center justify-center w-full'>
+      <div className='relative p-4 flex items-center justify-center w-full font-orbitron'>
         <AnimatePresence>
           <motion.div 
             key={format} 

@@ -9,8 +9,8 @@ const Toggler = ({ isActive, onChange }: Props) => {
     <label 
       htmlFor='checked-toggle' 
       className='inline-flex items-center relative transition-all duration-300 
-      dark:bg-secondary-500/25 bg-primary-900/25 hover:dark:bg-secondary-900/50 hover:bg-primary-800 
-      cursor-pointer w-20 h-8 rounded-full'
+      dark:bg-secondary-500/25 bg-primary-900/25 hover:dark:bg-secondary-900/50 hover:bg-primary-800/70 
+      cursor-pointer w-20 h-8 rounded-full shadow-inner dark:shadow-secondary-900 shadow-primary-900'
     >
       <input 
         type='checkbox' 

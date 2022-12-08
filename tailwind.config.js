@@ -34,6 +34,9 @@ module.exports = {
           '800': '#032233',
           '900': '#08141b',
         },
+      },
+      fontFamily: {
+        'orbitron': ['Orbitron', 'sans-serif']
       }
     },
   },
