@@ -1,17 +1,23 @@
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+
+import PDFModal  from '../modals/PDFModal';
+import ClockTime from '../loaders/ClockTime';
 
 import ContactMeButton from '../buttons/ContactMeButton';
-
-import ClockTime from '../loaders/ClockTime';
+import ContactMeButtonAction from '../buttons/ContactMeButtonAction';
 import useWebsiteConfigurations from '../../hooks/fetchHooks/useWebsiteConfigurations';
 
-const URL_PREFIX = process.env.NEXT_PUBLIC_IMG_PREFIX;
-
 const PersonalDataContainer = () => {
-
+  
   const [t, i18n] = useTranslation();
   const { data } = useWebsiteConfigurations();
+  const [isCVModalOpen, setIsCVModalOpen] = useState(false);
+
+  const toggleCVModal = () => {
+    setIsCVModalOpen(!isCVModalOpen);
+  };
 
   return (
     <>
@@ -46,15 +52,17 @@ const PersonalDataContainer = () => {
             link='https://t.me/mrmaik15'
           />
 
-          <ContactMeButton 
-            download={true}
-            icon='fa-brands fa-telegram'
+          <ContactMeButtonAction 
+            onClick={toggleCVModal}
+            icon='fa-solid fa-file'
             title={i18n.language === 'en' ? 'Resume' : 'CV'}
-            link={`${URL_PREFIX}${data?.cv_url}` || ''}
           />
 
         </div>
 
+        <AnimatePresence>
+          {isCVModalOpen && <PDFModal onClick={toggleCVModal} URL={data?.cv_url} PDFname={data?.cv_title} />}
+        </AnimatePresence>
       </motion.div>
     </>
   )
