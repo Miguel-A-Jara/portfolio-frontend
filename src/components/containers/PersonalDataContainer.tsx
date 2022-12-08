@@ -1,16 +1,25 @@
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
+
 import ContactMeButton from '../buttons/ContactMeButton';
 
 import ClockTime from '../loaders/ClockTime';
+import useWebsiteConfigurations from '../../hooks/fetchHooks/useWebsiteConfigurations';
+
+const URL_PREFIX = process.env.NEXT_PUBLIC_IMG_PREFIX;
 
 const PersonalDataContainer = () => {
 
   const [t, i18n] = useTranslation();
+  const { data } = useWebsiteConfigurations();
 
   return (
     <>
-      <div className='flex flex-1 gap-2 flex-wrap border-2 p-4 rounded-lg transition-colors duration-300 max-w-sm
-       dark:border-secondary-500 border-primary-400 dark:text-secondary-400 text-primary-400 bg-black/60'>
+      <motion.div 
+        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1, delay: 1.3 }}
+        className='flex flex-1 gap-2 flex-wrap border-2 p-4 rounded-lg transition-colors duration-300 max-w-sm
+       dark:border-secondary-500 border-primary-400 dark:text-secondary-400 text-primary-400 bg-black/60'
+      >
 
         <h4 className='font-light text-2xl text-start'>
           {i18n.language === 'en' ? 'Time in my country (Paraguay):' : 'La hora en mi país (Paraguay):'}
@@ -36,9 +45,17 @@ const PersonalDataContainer = () => {
             icon='fa-brands fa-telegram'
             link='https://t.me/mrmaik15'
           />
+
+          <ContactMeButton 
+            download={true}
+            icon='fa-brands fa-telegram'
+            title={i18n.language === 'en' ? 'Resume' : 'CV'}
+            link={`${URL_PREFIX}${data?.cv_url}` || ''}
+          />
+
         </div>
 
-      </div>
+      </motion.div>
     </>
   )
 }

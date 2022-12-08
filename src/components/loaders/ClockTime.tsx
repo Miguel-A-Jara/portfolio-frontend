@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import useTimeZone from '../../hooks/fetchHooks/useTimeZone';
+import useTimeZone from '../../hooks/useTimeZone';
 
 const ClockTime = () => {
 

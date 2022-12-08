@@ -14,13 +14,13 @@ const ContactForm = () => {
 
   const [t, i18n] = useTranslation();
 
-  const { register, handleSubmit, formState: { errors, isValid }, control } = useForm<Partial<IContactForm>>({
+  const { register, handleSubmit, formState: { errors, isValid }, control, reset } = useForm<Partial<IContactForm>>({
     mode: 'onChange',
     resolver: yupResolver( contactFormSchema )
   });
 
   const submitForm = () => {
-    
+    reset();
   }
 
   return (
