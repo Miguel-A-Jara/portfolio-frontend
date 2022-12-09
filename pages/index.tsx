@@ -7,6 +7,7 @@ import Technologies from '../src/components/sections/technologies/Technologies';
 import ContactMe    from '../src/components/sections/contact/ContactMe';
 
 import useWindowSize from '../src/hooks/useWindowSize';
+import ProjectsBuilt from '../src/components/sections/projects-built/ProjectsBuilt';
 
 const Home = () => {
 
@@ -24,14 +25,17 @@ const Home = () => {
           : <MobileNavbar />
         }
 
-        <main className='mb-16 lg:mb-0 lg:ml-28 relative z-0'>
-          <a id='about-me' className='absolute top-0'></a>
+        <main className='mb-16 lg:mb-0 lg:ml-28 relative z-0 snap-y'>
+          <a id='about-me' className='absolute top-0 snap-start'></a>
           <AboutMe />
 
-          <a id='technologies' className='absolute'></a>
+          <a id='technologies' className='absolute snap-start'></a>
           <Technologies />
 
-          <a id='contact' className='absolute'></a>
+          <a id='projects' className='absolute snap-start'></a>
+          <ProjectsBuilt />
+
+          <a id='contact' className='absolute snap-start'></a>
           <ContactMe />
 
         </main>

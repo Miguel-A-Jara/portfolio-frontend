@@ -17,7 +17,7 @@ const navbarLinkInfo = [
   {
     text: 'navbarLinkButtons.projects',
     iconClass: 'fa-solid fa-puzzle-piece',
-    link: '#about-me'
+    link: '#projects'
   },
   {
     text: 'navbarLinkButtons.contact',
