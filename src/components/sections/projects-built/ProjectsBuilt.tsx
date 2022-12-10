@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import useGithub from '../../../hooks/fetchHooks/useGithub';
+import AccordionContainer from '../../containers/AccordionContainer';
 
 const ProjectsBuilt = () => {
 
   const [t, i18n] = useTranslation();
+  const { data, reposDescriptions } = useGithub();
 
   return (
     <div className='min-h-[100vh] flex flex-wrap gap-8 py-10 top-0 sticky
@@ -22,9 +25,17 @@ const ProjectsBuilt = () => {
 
     </motion.h1>
 
-      
-      
-      
+      <div>
+        {
+          data?.data.user.pinnedItems.edges.map((item, idx) => (
+            <AccordionContainer 
+              key={item.node.name} 
+              title={item.node.name} 
+              description={reposDescriptions[idx] || item.node.description}
+            />
+          ))
+        }
+      </div>
     </div>
   )
 }
