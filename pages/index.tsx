@@ -26,16 +26,16 @@ const Home = () => {
         }
 
         <main className='mb-16 lg:mb-0 lg:ml-28 relative z-0 snap-y'>
-          <a id='about-me' className='absolute top-0 snap-start'></a>
+          <a id='about-me' className='absolute top-0'></a>
           <AboutMe />
 
-          <a id='technologies' className='absolute snap-start'></a>
+          <a id='technologies' className='absolute'></a>
           <Technologies />
 
-          <a id='projects' className='absolute snap-start'></a>
+          <a id='projects' className='absolute'></a>
           <ProjectsBuilt />
 
-          <a id='contact' className='absolute snap-start'></a>
+          <a id='contact' className='absolute'></a>
           <ContactMe />
 
         </main>

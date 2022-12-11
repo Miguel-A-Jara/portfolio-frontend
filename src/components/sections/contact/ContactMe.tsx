@@ -9,8 +9,8 @@ const ContactMe = () => {
   const [t, i18n] = useTranslation();
 
   return (
-    <div className='min-h-[100vh] flex flex-wrap gap-8 py-10 top-0 relative
-      items-start justify-center px-6 text-center dark:bg-secondary-900 bg-primary-400'
+    <div className='min-h-[100vh] flex flex-wrap py-10 top-0 relative
+      items-start justify-center text-center dark:bg-secondary-900 bg-primary-400'
     >
 
     <motion.h1 
@@ -22,8 +22,10 @@ const ContactMe = () => {
       { i18n.language === 'en' ? 'Contact Me' : 'Contáctame' }
     </motion.h1>
 
-      <ContactForm />
-      <PersonalDataContainer />
+      <div className='px-6 xl:px-0 max-w-6xl gap-8 flex flex-wrap lg:flex-nowrap justify-between items-start'>
+        <ContactForm />
+        <PersonalDataContainer />
+      </div>
       
     </div>
   )
