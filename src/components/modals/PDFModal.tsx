@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion';
 import { Document, Page, pdfjs } from 'react-pdf';
 
-import useScrollPage from '../../hooks/useScrollPage';
-import downloadFile  from '../../utils/downloadFile';
+import downloadFile     from '../../utils/downloadFile';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
@@ -17,13 +16,7 @@ const URL_PREFIX = process.env.NEXT_PUBLIC_IMG_PREFIX;
 const PDFModal = ({ URL, onClick, PDFname }: Props) => {
 
   const PDF_URL = `${URL_PREFIX}${URL}`;
-  const { isPageScrollable, setIsPageScrollable } = useScrollPage();
-
-  const handleToggle = () => {
-    onClick();
-    setIsPageScrollable(!isPageScrollable);
-  }
-
+  
   const handleDownload = () => {
     downloadFile(PDF_URL, PDFname, '.pdf');
   }
@@ -34,7 +27,7 @@ const PDFModal = ({ URL, onClick, PDFname }: Props) => {
       transition={{ duration: 0.3 }}
       className='fixed inset-0 flex flex-wrap justify-center items-center mb-16 lg:mb-0'
     >
-      <div onClick={handleToggle} 
+      <div onClick={onClick} 
         className='fixed inset-0 bg-black/80 backdrop-blur flex justify-center items-center'
       />
 
@@ -45,7 +38,7 @@ const PDFModal = ({ URL, onClick, PDFname }: Props) => {
         <button 
           className='lg:hidden w-full flex justify-center items-center gap-5 p-2 text-3xl shadow-md
           dark:text-secondary-500 text-primary-400 transition-all duration-300 filter-none bg-black/30'
-          onClick={handleToggle}>
+          onClick={onClick}>
           <i className='fa-sharp fa-solid fa-xmark' />
         </button>
 

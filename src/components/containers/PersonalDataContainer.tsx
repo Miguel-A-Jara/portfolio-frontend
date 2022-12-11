@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 
-import PDFModal  from '../modals/PDFModal';
-import ClockTime from '../loaders/ClockTime';
+import PDFModal      from '../modals/PDFModal';
+import ClockTime     from '../loaders/ClockTime';
+import useScrollPage from '../../hooks/useScrollPage';
 
-import ContactMeButton from '../buttons/ContactMeButton';
+import ContactMeButton  from '../buttons/ContactMeButton';
+import { ModalContext } from '../../context/ModalContext';
 import ContactMeButtonAction from '../buttons/ContactMeButtonAction';
 import useWebsiteConfigurations from '../../hooks/fetchHooks/useWebsiteConfigurations';
 
@@ -13,11 +15,14 @@ const PersonalDataContainer = () => {
   
   const [t, i18n] = useTranslation();
   const { data } = useWebsiteConfigurations();
-  const [isCVModalOpen, setIsCVModalOpen] = useState(false);
+  const { dispatch, isModalOpen } = useContext(ModalContext);
+  const { isPageScrollable, setIsPageScrollable } = useScrollPage();
 
-  const toggleCVModal = () => {
-    setIsCVModalOpen(!isCVModalOpen);
-  };
+  const handleToggle = () => {
+    if(dispatch)
+      dispatch({ type: isModalOpen ? 'CLOSE_MODAL' : 'OPEN_MODAL', payload: data?.cv_url || 'PDF_ID' });
+    setIsPageScrollable(!isPageScrollable);
+  }
 
   return (
     <>
@@ -52,7 +57,7 @@ const PersonalDataContainer = () => {
           />
 
           <ContactMeButtonAction 
-            onClick={toggleCVModal}
+            onClick={handleToggle}
             icon='fa-solid fa-file'
             title={i18n.language === 'en' ? 'Resume' : 'CV'}
           />
@@ -60,7 +65,7 @@ const PersonalDataContainer = () => {
         </div>
 
         <AnimatePresence>
-          {isCVModalOpen && <PDFModal onClick={toggleCVModal} URL={data?.cv_url} PDFname={data?.cv_title} />}
+          {isModalOpen && <PDFModal onClick={handleToggle} URL={data?.cv_url} PDFname={data?.cv_title} />}
         </AnimatePresence>
       </div>
     </>
