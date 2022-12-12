@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import Image          from 'next/image';
 import { motion } from 'framer-motion';
+import { Button } from '@material-tailwind/react';
 
 
 import { ModalContext }  from '../../context/ModalContext';
@@ -32,10 +33,10 @@ const TechnologyButton = ({ data, idx }: Props) => {
 
   return (
     <>
-      <motion.button 
+      <motion.div
         whileInView={{ scale: 1 }} initial={{ scale: 0 }} transition={{ duration: 0.3, delay: idx * 0.025  }}
         onClick={handleToggle}>
-        <div className={`w-32 h-32 flex items-center rounded-lg p-4 relative
+        <Button className={`w-32 h-32 flex items-center rounded-lg p-4 relative hover:shadow-inner hover:shadow-black
         dark:bg-secondary-900 bg-primary-900/50 transition-colors duration-300 shadow-inner shadow-black`}>
           <Image
             src={`${IMG_PREFIX}${data.logo}`}
@@ -45,8 +46,8 @@ const TechnologyButton = ({ data, idx }: Props) => {
             title={ data.name }
             className='rounded-lg hover:scale-90 transition-transform duration-300'
           />
-        </div>
-      </motion.button>
+        </Button>
+      </motion.div>
       <TechModal
         id={data.id}
         techType={data.technology_type}

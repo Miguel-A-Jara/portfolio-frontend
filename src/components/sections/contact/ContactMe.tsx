@@ -22,7 +22,7 @@ const ContactMe = () => {
       { i18n.language === 'en' ? 'Contact Me' : 'Contáctame' }
     </motion.h1>
 
-      <div className='px-6 xl:px-0 max-w-6xl gap-8 flex flex-wrap lg:flex-nowrap justify-between items-start'>
+      <div className='sm:px-4 py-8 max-w-6xl gap-8 flex flex-wrap lg:flex-nowrap justify-between items-start'>
         <ContactForm />
         <PersonalDataContainer />
       </div>

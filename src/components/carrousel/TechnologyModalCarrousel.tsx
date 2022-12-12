@@ -1,6 +1,8 @@
 import { useRef } from 'react';
 import Image from 'next/image';
 
+import { Button } from '@material-tailwind/react';
+
 import SwiperCore from 'swiper';
 import { Pagination, Navigation, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -25,19 +27,24 @@ const TechnologyModalCarrousel = ({ data }: Props) => {
   return (
     <div className='w-full lg:max-w-sm relative lg:opacity-30 hover:opacity-100 transition-all duration-300 my-8 lg:ml-8'>
 
-      <button 
-        className='absolute -left-5 top-[calc(50%-1.5rem)] z-10 p-2 rounded-full w-14 h-14 transition-colors duration-300
-        dark:bg-secondary-900/75 hover:dark:bg-secondary-800/60 bg-primary-500/75 hover:bg-primary-600/80'
-        onClick={() => swiperRef.current?.slidePrev()}>
-          <i className='fa-solid fa-arrow-left-long text-2xl sm:text-4xl dark:text-secondary-400 text-primary-300' />
-      </button>
+      <div className='absolute -left-5 top-[calc(50%-1.5rem)] z-10'>
+        <Button
+          className='p-2 rounded-full w-14 h-14 transition-colors duration-300
+          dark:bg-secondary-900/75 hover:dark:bg-secondary-800/60 bg-primary-500/75 hover:bg-primary-600/80
+          hover:shadow-none shadow-none'
+          onClick={() => swiperRef.current?.slidePrev()}>
+            <i className='fa-solid fa-arrow-left-long text-2xl sm:text-4xl dark:text-secondary-400 text-primary-300' />
+        </Button>
+      </div>
       
-      <button 
-        className='absolute -right-5 top-[calc(50%-1.5rem)] z-10 p-2 rounded-full w-14 h-14 transition-colors duration-300
-        dark:bg-secondary-900/75 hover:dark:bg-secondary-800/60 bg-primary-500/75 hover:bg-primary-600/80'
-        onClick={() => swiperRef.current?.slideNext()}>
-          <i className='fa-solid fa-arrow-right-long text-2xl sm:text-4xl dark:text-secondary-400' />
-      </button>
+      <div className='absolute -right-5 top-[calc(50%-1.5rem)] z-10 '>
+        <Button
+          className='p-2 rounded-full w-14 h-14 transition-colors duration-300 hover:shadow-none shadow-none
+          dark:bg-secondary-900/75 hover:dark:bg-secondary-800/60 bg-primary-500/75 hover:bg-primary-600/80'
+          onClick={() => swiperRef.current?.slideNext()}>
+            <i className='fa-solid fa-arrow-right-long text-2xl sm:text-4xl dark:text-secondary-400' />
+        </Button>
+      </div>
 
       <Swiper
         modules={[Pagination, Navigation, Autoplay]}

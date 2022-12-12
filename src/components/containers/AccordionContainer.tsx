@@ -1,22 +1,28 @@
-import { Accordion, AccordionHeader, AccordionBody } from '@material-tailwind/react';
+import { Accordion, AccordionHeader, AccordionBody, Button } from '@material-tailwind/react';
+import Link from 'next/link';
+
+import { Edge } from '../../types/IGitHub';
+import GitHubLanguageButton from '../buttons/GitHubLanguageButton';
 import AccordionMarkdown from '../markdown/AccordionMarkdown';
 
 interface Props {
   idx: number;
-  title: string;
+  projectData: Edge;
   description: string;
   openedAccordion: number;
   onClick: (value: number) => void;
 }
 
-const AccordionContainer = ({ description, title, idx, onClick, openedAccordion } : Props) => {  
+const AccordionContainer = ({ projectData, idx, onClick, openedAccordion, description } : Props) => {  
 
   const isOpen = openedAccordion === (idx + 1);
+
+  const { url, name, homepageUrl, primaryLanguage } = projectData?.node;
 
   return (
     <>
       <Accordion 
-        className={`${isOpen ? 'dark:bg-secondary-700/50 bg-primary-300' : 'dark:bg-secondary-900/50 bg-primary-400'} transition-all duration-300 py-0 pb-0 pt-0`}
+        className={`${isOpen ? 'dark:bg-secondary-700/50 bg-primary-300/50' : 'dark:bg-secondary-900/50 bg-primary-400/50'} transition-all duration-300 py-0 pb-0 pt-0 backdrop-blur-sm`}
         open={openedAccordion === (idx + 1)}
 
         icon={<i className={`fa-sharp fa-solid fa-arrow-up w-5 h-5 flex items-center justify-center text-3xl dark:text-secondary-400 text-primary-100
@@ -24,13 +30,34 @@ const AccordionContainer = ({ description, title, idx, onClick, openedAccordion 
       >
         
         <AccordionHeader 
-          className='text-2xl lg:text-5xl font-light lg:font-bold text-start lg:text-center justify-between px-10 border-none'
+          className='text-2xl lg:text-5xl font-light lg:font-bold text-start lg:text-center justify-between px-4 sm:px-10 dark:border-secondary-600 border-primary-200'
           onClick={() => onClick(idx + 1)}
         >
-          <h2 className='dark:text-secondary-400 text-primary-100 transition-all duration-300'>{ title }</h2>
+          
+          <GitHubLanguageButton languageColor={primaryLanguage.color} languageType={primaryLanguage.name} />
+
+          <h2 className='dark:text-secondary-400 text-primary-100 transition-all duration-300'>{ name }</h2>
+
+          <Button 
+            className='hidden sm:flex items-center justify-center ml-auto mr-6 rounded-full bg-black/50 shadow-none hover:shadow-none pointer-events-auto p-2 outline-2 outline dark:outline-secondary-400 outline-primary-200 transition-all duration-300'
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Link href={homepageUrl} target='_blank'>
+              <i className='fa-solid fa-globe text-3xl w-8 h-8 dark:text-secondary-400 text-primary-300 transition-all duration-300' />
+            </Link>
+          </Button>
+
+          <Button 
+            className='hidden sm:flex items-center justify-center rounded-full bg-black/50 shadow-none hover:shadow-none pointer-events-auto p-2 outline-2 outline dark:outline-secondary-400 outline-primary-200 transition-all duration-300'
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Link href={url} target='_blank'>
+              <i className='fa-brands fa-github text-3xl w-8 h-8 dark:text-secondary-400 text-primary-300 transition-all duration-300' />
+            </Link>
+          </Button>
         </AccordionHeader>
       
-        <AccordionBody className='dark:bg-secondary-900 bg-primary-200/50 transition-all duration-300 p-0 min-h-[30vh] h-full overflow-y-auto py-8'>
+        <AccordionBody className='dark:bg-secondary-900/80 bg-primary-200/50 transition-all duration-300 p-0 min-h-[30vh] h-full overflow-y-auto py-8'>
           <AccordionMarkdown description={description} />
         </AccordionBody>
       </Accordion>

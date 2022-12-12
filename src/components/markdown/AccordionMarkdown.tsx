@@ -41,7 +41,7 @@ const AccordionMarkdown = ({ description }: Props ) => {
           </Link>
         ),
         img: props => (
-          <div className='relative h-64 aspect-video mx-auto rounded-lg overflow-hidden'>
+          <div className='relative h-32 md:h-64 aspect-video mx-auto rounded-lg overflow-hidden'>
             {
               props.src ? <Image
                 fill

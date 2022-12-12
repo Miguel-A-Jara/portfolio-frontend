@@ -17,6 +17,9 @@ const Document = () => {
 
         {/* Font Awesome (Used for icons) */}
         <script src='https://kit.fontawesome.com/a50da1e470.js' defer crossOrigin='anonymous'></script>
+
+        {/* Technologies Icons (devicon.dev) */}
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css'/>
       </Head>
       <body className='dark:bg-secondary-900 bg-primary-100 dark:text-secondary-500 text-black/80
         transition-all duration-300'

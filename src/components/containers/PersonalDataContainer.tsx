@@ -15,19 +15,19 @@ const PersonalDataContainer = () => {
   
   const [t, i18n] = useTranslation();
   const { data } = useWebsiteConfigurations();
-  const { dispatch, isModalOpen } = useContext(ModalContext);
+  const { dispatch, isModalOpen, modalId } = useContext(ModalContext);
   const { isPageScrollable, setIsPageScrollable } = useScrollPage();
 
   const handleToggle = () => {
     if(dispatch)
-      dispatch({ type: isModalOpen ? 'CLOSE_MODAL' : 'OPEN_MODAL', payload: data?.cv_url || 'PDF_ID' });
+      dispatch({ type: isModalOpen ? 'CLOSE_MODAL' : 'OPEN_MODAL', payload: 'CV_PDF' });
     setIsPageScrollable(!isPageScrollable);
   }
 
   return (
     <>
       <div 
-        className='flex gap-2 flex-wrap border-2 p-4 rounded-lg transition-colors duration-300 max-w-sm
+        className='flex gap-2 flex-wrap border-2 p-4 sm:rounded-lg transition-colors duration-300 max-w-sm
        dark:border-secondary-500 border-primary-400 dark:text-secondary-400 text-primary-300
       dark:bg-black/40 bg-black/70'>
 
@@ -39,7 +39,7 @@ const PersonalDataContainer = () => {
         <span className='font-light text-center block w-full'>
         {i18n.language === 'en' 
           ? 'Available from 08:00am to 08:00pm.' 
-          : 'Disponible desde las 08:00am hasta las 08:00pm.'
+          : 'Disponible de 08:00am a 08:00pm.'
         }
         </span>
 
@@ -65,7 +65,10 @@ const PersonalDataContainer = () => {
         </div>
 
         <AnimatePresence>
-          {isModalOpen && <PDFModal onClick={handleToggle} URL={data?.cv_url} PDFname={data?.cv_title} />}
+          {
+            (isModalOpen && modalId === 'CV_PDF') && 
+            <PDFModal onClick={handleToggle} URL={data?.cv_url} PDFname={data?.cv_title} />
+          }
         </AnimatePresence>
       </div>
     </>

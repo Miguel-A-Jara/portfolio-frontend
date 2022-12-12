@@ -10,8 +10,9 @@ const Toggler = ({ isActive, onChange }: Props) => {
   return (
     <Button
       className='inline-flex items-center relative transition-all duration-300 overflow-hidden
-      dark:bg-secondary-500/25 bg-primary-900/25 hover:dark:bg-secondary-900/50 hover:bg-primary-800/70 
-      cursor-pointer w-20 h-8 rounded-full shadow-inner dark:shadow-secondary-900 shadow-primary-900 hover:shadow-inner'
+      dark:bg-secondary-500/25 bg-primary-900/25 hover:dark:bg-secondary-900/50 hover:bg-primary-800/70
+      cursor-pointer w-20 h-8 rounded-full shadow-inner dark:shadow-secondary-900 shadow-primary-900 hover:shadow-inner
+      hover:dark:shadow-secondary-900 hover:shadow-primary-900'
       onClick={onChange}
     >
       <div className={`

@@ -3,7 +3,12 @@ import { Sphere, OrbitControls, MeshDistortMaterial } from '@react-three/drei';
 
 import useDarkMode from '../../hooks/useDarkMode';
 
-const MySphere = () => {
+interface Props {
+  quality?: number;
+  scale  ?: number;
+}
+
+const MySphere = ({ quality = 8, scale = 3 }: Props) => {
 
   const { isDarkTheme } = useDarkMode();
 
@@ -14,8 +19,8 @@ const MySphere = () => {
       <Suspense fallback={null}>
         <Sphere
           visible
-          args={[1, 8, 8]}
-          scale={3}
+          args={[1, quality, quality]}
+          scale={scale}
         >
           <meshPhysicalMaterial
             color={isDarkTheme ? '#147ba6' : '#007c5b'}
