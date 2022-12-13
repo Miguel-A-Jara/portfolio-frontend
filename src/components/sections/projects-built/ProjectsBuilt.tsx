@@ -32,10 +32,9 @@ const ProjectsBuilt = () => {
       initial={{ translateX: -100, opacity: 0 }} whileInView={{ translateX: 0, opacity: 1 }} 
       transition={{ duration: 1, delay: 0.3 }}
       className='font-mono font-bold text-4xl lg:text-7xl text-center 
-      dark:text-secondary-400 text-primary-500 w-full max-w-3xl'
+      dark:text-secondary-400 text-primary-100 w-full max-w-3xl'
     >
       <span>{ i18n.language === 'en' ? 'My Projects' : 'Mis Proyectos' }</span>
-      <i className='fa-solid fa-briefcase ml-4 text-4xl lg:text-6xl'/>
 
     </motion.h1>
 

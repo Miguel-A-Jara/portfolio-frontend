@@ -15,7 +15,7 @@ const ChangeLanguageButton = () => {
       <Button 
         className={
           `w-full py-2 flex items-center justify-center transition-all duration-300 hover:shadow-none shadow-none p-0 rounded-none bg-transparent
-          ${i18n.language === 'en' && 'dark:bg-secondary-600 bg-primary-300'}`
+          ${i18n.language === 'en' && 'dark:bg-secondary-600 bg-primary-500'}`
         }
         onClick={() => {i18n.changeLanguage('en')}}
         >
@@ -24,7 +24,7 @@ const ChangeLanguageButton = () => {
       <Button
         className={
           `w-full py-2 flex items-center justify-center transition-all duration-300 hover:shadow-none shadow-none p-0 rounded-none bg-transparent
-          ${i18n.language === 'es' && 'dark:bg-secondary-600 bg-primary-300'}`
+          ${i18n.language === 'es' && 'dark:bg-secondary-600 bg-primary-500'}`
         }
         onClick={() => {i18n.changeLanguage('es')}}
       >

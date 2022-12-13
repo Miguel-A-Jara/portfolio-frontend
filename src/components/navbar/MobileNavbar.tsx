@@ -31,7 +31,7 @@ const MobileNavbar = () => {
   return (
     <>
       <div className='flex items-center justify-between flex-row-reverse px-4 md:px-7 lg:hidden fixed bottom-0 h-16 w-[100vw]
-      dark:bg-secondary-800 bg-primary-400 text-2xl z-10'
+      dark:bg-secondary-800 bg-primary-700 text-2xl z-10'
       >
         <HamburgerButton handleToggle={handleToggle} />
         <Toggler isActive={isDarkTheme} onChange={toggleOnChange} />

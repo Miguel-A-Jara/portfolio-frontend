@@ -22,7 +22,7 @@ const AccordionContainer = ({ projectData, idx, onClick, openedAccordion, descri
   return (
     <>
       <Accordion 
-        className={`${isOpen ? 'dark:bg-secondary-700/50 bg-primary-500/10' : 'dark:bg-secondary-900/50 bg-primary-600/80'} transition-all duration-300 py-0 pb-0 pt-0 backdrop-blur-sm`}
+        className={`${isOpen ? 'dark:bg-secondary-700/50 bg-primary-500/50' : 'dark:bg-secondary-900/50 bg-primary-900/80'} transition-all duration-300 py-0 pb-0 pt-0 backdrop-blur-sm`}
         open={openedAccordion === (idx + 1)}
 
         icon={<i className={`fa-sharp fa-solid fa-arrow-up w-5 h-5 flex items-center justify-center text-3xl dark:text-secondary-400 text-primary-100
@@ -59,7 +59,7 @@ const AccordionContainer = ({ projectData, idx, onClick, openedAccordion, descri
           </div>
         </AccordionHeader>
       
-        <AccordionBody className='dark:bg-secondary-900/80 bg-primary-500/10 transition-all duration-300 p-0 min-h-[30vh] h-full overflow-y-auto py-8'>
+        <AccordionBody className='dark:bg-secondary-900/80 bg-primary-900/80 transition-all duration-300 p-0 min-h-[30vh] h-full overflow-y-auto py-8'>
           <div className='mx-4 lg:mx-28'>
             <AccordionMarkdown description={description} />
           </div>
