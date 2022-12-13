@@ -11,7 +11,7 @@ import ChangeLanguageButton from '../buttons/ChangeLanguageButton';
 const Navbar = () => {
 
   const { isDarkTheme, setTheme } = useDarkMode();
-  const [t, i18n] = useTranslation();
+  const [t] = useTranslation();
 
   const toggleOnChange = () => {
     setTheme(!isDarkTheme);
@@ -19,9 +19,9 @@ const Navbar = () => {
 
   return (
     <div className='hidden lg:flex flex-col gap-4 justify-between items-center h-full w-28 fixed py-10 px-2
-    dark:bg-secondary-800 bg-primary-500 drop-shadow-xl transition-all duration-300 z-10'>
-      {/* <NavbarParticles /> */}
-      <ul className='flex flex-col justify-between gap-10 z-50 relative'>
+    dark:bg-secondary-800 bg-primary-700 drop-shadow-xl transition-all duration-300 z-10'>
+      <NavbarParticles />
+      <ul className='mb-auto flex flex-col justify-around gap-10 z-50 relative'>
         {
           navbarLinkInfo.map(i => (
             <NavbarLinkButton key={i.text} text={t(i.text)} link={i.link}>

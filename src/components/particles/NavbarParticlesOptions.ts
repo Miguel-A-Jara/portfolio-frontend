@@ -2,20 +2,20 @@ const navbarParticlesOptions = (isDarkTheme: boolean) => {
   const options = {
     particles: {
       number: {
-        value: 50,
+        value: 30,
         density: {
           enable: false,
           area: 400
         }
       },
       color: {
-        value: isDarkTheme ? ['#036686', '#159ac5'] : ['#034333', '#036248']
+        value: isDarkTheme ? ['#036686', '#159ac5'] : ['#2DD7CB', '#21ABA1']
       },
       shape: {
         type: 'circle'
       },
       opacity: {
-        value: 0.5,
+        value: isDarkTheme ? 0.5 : 1,
         anim: {
           enable: true,
           speed: 5
@@ -27,7 +27,7 @@ const navbarParticlesOptions = (isDarkTheme: boolean) => {
       links: {
         enable: true,
         distance: 60,
-        color: isDarkTheme ? '#31b7df' : '#034333',
+        color: isDarkTheme ? '#31b7df' : '#F6FDFD',
         opacity: 1,
         width: 0.5
       },
@@ -38,29 +38,7 @@ const navbarParticlesOptions = (isDarkTheme: boolean) => {
         straight: false
       }
     },
-    interactivity: {
-      events: {
-        onHover: {
-          enable: true,
-          mode: 'grab'
-        },
-        onClick: {
-          enable: true,
-          mode: 'push'
-        }
-      },
-      modes: {
-        grab: {
-          distance: 50,
-          links: {
-            opacity: 0.5
-          }
-        },
-        push: {
-          quantity: 5,
-        }
-      }
-    }
+    interactivity: {}
   };
   
   return options;

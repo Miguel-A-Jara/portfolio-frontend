@@ -19,7 +19,7 @@ const AboutMe = () => {
       <motion.h1 
         initial={{ translateX: -100, opacity: 0 }} whileInView={{ translateX: 0, opacity: 1 }} 
         transition={{ duration: 1, delay: 0.8 }}
-        className='font-mono font-bold text-7xl text-center dark:text-secondary-400 text-primary-500 w-full max-w-3xl'>
+        className='font-mono font-bold text-7xl text-center dark:text-secondary-400 text-primary-600 w-full max-w-3xl'>
         { data?.title || <SkeletonWrapper /> }
       </motion.h1>
 

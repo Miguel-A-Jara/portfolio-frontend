@@ -7,7 +7,8 @@ const ClockTime = () => {
 
   return (
     <div className='w-full flex justify-between items-center overflow-y-hidden relative p-4 text-2xl font-bold 
-    bg-black/25 dark:text-secondary-400 text-primary-300 transition-all duration-300 rounded-lg shadow-inner shadow-black'>
+    dark:bg-black/25 bg-primary-500 dark:shadow-black shadow-primary-600 
+    dark:text-secondary-400 text-primary-100 transition-all duration-300 rounded-lg shadow-inner'>
       <div className='relative p-4 flex items-center justify-center w-full font-orbitron'>
         <AnimatePresence>
           <motion.div 

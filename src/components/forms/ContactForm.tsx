@@ -26,7 +26,7 @@ const ContactForm = () => {
   return (
     <form 
       onSubmit={ handleSubmit(submitForm) }
-      className='w-full dark:text-secondary-800 text-primary-600
+      className='w-full dark:text-secondary-800 text-primary-200
       rounded-md transition-colors duration-300 flex flex-wrap justify-between items-end gap-8'
     >
       {/* This syntax is a Generic React Component */}

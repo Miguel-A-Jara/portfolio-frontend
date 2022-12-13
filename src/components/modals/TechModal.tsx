@@ -45,7 +45,7 @@ const TechModal = ({ id, techType }: Props) => {
               transition={{ duration: 0.4, ease: 'backInOut' }}
               className='fixed inset-0 z-10 w-[100vw] h-[100vh] flex justify-center items-center lg:pointer-events-none'
             >
-              <div className='dark:bg-secondary-800/80 bg-primary-500/70 dark:text-secondary-400 text-primary-200
+              <div className='dark:bg-secondary-800/80 bg-primary-600/60 dark:text-secondary-400 text-primary-100
               w-full h-full max-w-4xl relative lg:max-h-[75vh] lg:ml-28
               transition-colors duration-300 lg:rounded-lg z-50 pointer-events-auto'>
 

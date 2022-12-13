@@ -28,8 +28,8 @@ const PersonalDataContainer = () => {
     <>
       <div 
         className='flex gap-2 flex-wrap border-2 p-4 sm:rounded-lg transition-colors duration-300 max-w-sm
-       dark:border-secondary-500 border-primary-400 dark:text-secondary-400 text-primary-300
-      dark:bg-black/40 bg-black/70'>
+       dark:border-secondary-500 border-primary-500 dark:text-secondary-400 text-primary-700
+      dark:bg-black/40 bg-primary-300/75'>
 
         <h4 className='font-light text-2xl text-start'>
           {i18n.language === 'en' ? 'Time in my country (Paraguay):' : 'La hora en mi país (Paraguay):'}

@@ -12,9 +12,7 @@ const CanvasContainer = ({ children, className }: Props) => {
       initial={{ opacity: 0 }} 
       animate={{ opacity: 1 }}
       transition={{ duration: 3 }} 
-      drag
-      dragConstraints={{ left: 10, top: 0, right: 10, bottom: 0 }}
-      className={className}
+      className={`${className} cursor-pointer`}
     >
       <Canvas>
         { children }

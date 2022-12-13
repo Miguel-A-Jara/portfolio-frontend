@@ -9,11 +9,11 @@ const navbarLinkInfo = [
     iconClass: 'fa-solid fa-code',
     link: '#technologies'
   },
-  {
+  /* {
     text: 'navbarLinkButtons.companies',
     iconClass: 'fa-solid fa-briefcase',
     link: '#about-me'
-  },
+  }, */
   {
     text: 'navbarLinkButtons.projects',
     iconClass: 'fa-solid fa-puzzle-piece',

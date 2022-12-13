@@ -13,8 +13,8 @@ const PrismaDynamic = () => {
 
   return (
     <>
-      <ambientLight color={isDarkTheme ? '#72d4ee' : '#036248'} />
-      <pointLight intensity={20} position={[10, 10, 0]} color={isDarkTheme ? '#036686' : '#034333'} />
+      <ambientLight color={isDarkTheme ? '#72d4ee' : '#21ABA1'} />
+      <pointLight intensity={20} position={[10, 10, 0]} color={isDarkTheme ? '#036686' : '#0F4D49'} />
       <Suspense fallback={null}>
         <Sphere
           visible
@@ -23,7 +23,7 @@ const PrismaDynamic = () => {
           scale={3}
         >
           <MeshDistortMaterial 
-            color={isDarkTheme ? '#147ba6' : '#007c5b'}
+            color={isDarkTheme ? '#147ba6' : '#A4D6D3'}
             wireframe
             speed={3}
           />

@@ -23,8 +23,8 @@ const ProjectsBuilt = () => {
   }
 
   return (
-    <div className='min-h-[100vh] flex flex-wrap gap-8 py-10 top-0 relative
-      items-start justify-center px-6 text-center dark:bg-secondary-800 bg-primary-500 dark:shadow-secondary-900
+    <div className='min-h-[100vh] flex flex-wrap gap-8 py-10 sticky top-0
+      items-start justify-center px-6 text-center dark:bg-secondary-800 bg-primary-800 dark:shadow-secondary-900
       shadow-inner overflow-x-hidden overflow-y-hidden'
     >
 
@@ -32,14 +32,14 @@ const ProjectsBuilt = () => {
       initial={{ translateX: -100, opacity: 0 }} whileInView={{ translateX: 0, opacity: 1 }} 
       transition={{ duration: 1, delay: 0.3 }}
       className='font-mono font-bold text-4xl lg:text-7xl text-center 
-      dark:text-secondary-400 text-primary-100 w-full max-w-3xl'
+      dark:text-secondary-400 text-primary-500 w-full max-w-3xl'
     >
       <span>{ i18n.language === 'en' ? 'My Projects' : 'Mis Proyectos' }</span>
       <i className='fa-solid fa-briefcase ml-4 text-4xl lg:text-6xl'/>
 
     </motion.h1>
 
-      <div className='max-w-6xl rounded-lg overflow-hidden shadow-inner shadow-black z-10'>
+      <div className='max-w-6xl rounded-lg overflow-hidden shadow-inner dark:shadow-black shadow-primary-800 z-10'>
         {
           data?.data.user.pinnedItems.edges.map((item, idx) => (
             <AccordionContainer 
