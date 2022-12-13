@@ -30,7 +30,7 @@ const AccordionContainer = ({ projectData, idx, onClick, openedAccordion, descri
       >
         
         <AccordionHeader 
-          className='text-2xl lg:text-5xl font-light lg:font-bold text-start lg:text-center justify-between px-4 sm:px-10 dark:border-secondary-600 border-primary-200'
+          className='text-2xl lg:text-5xl font-light lg:font-bold text-start lg:text-center justify-between px-4 sm:px-10 dark:border-secondary-600 border-primary-200 transition-all duration-300'
           onClick={() => onClick(idx + 1)}
         >
           
@@ -38,27 +38,31 @@ const AccordionContainer = ({ projectData, idx, onClick, openedAccordion, descri
 
           <h2 className='dark:text-secondary-400 text-primary-100 transition-all duration-300'>{ name }</h2>
 
-          <Button 
-            className='hidden sm:flex items-center justify-center ml-auto mr-6 rounded-full bg-black/50 shadow-none hover:shadow-none pointer-events-auto p-2 outline-2 outline dark:outline-secondary-400 outline-primary-200 transition-all duration-300'
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Link href={homepageUrl} target='_blank'>
-              <i className='fa-solid fa-globe text-3xl w-8 h-8 dark:text-secondary-400 text-primary-300 transition-all duration-300' />
-            </Link>
-          </Button>
+          <div className='hidden sm:flex ml-auto items-center justify-around gap-4'>
+            <Button
+              className='items-center justify-center rounded-full bg-black/50 shadow-none hover:shadow-none pointer-events-auto p-2 outline-2 outline dark:outline-secondary-400 outline-primary-200 transition-all duration-300'
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Link href={homepageUrl} target='_blank'>
+                <i className='fa-solid fa-globe text-3xl w-8 h-8 dark:text-secondary-400 text-primary-300 transition-all duration-300' />
+              </Link>
+            </Button>
 
-          <Button 
-            className='hidden sm:flex items-center justify-center rounded-full bg-black/50 shadow-none hover:shadow-none pointer-events-auto p-2 outline-2 outline dark:outline-secondary-400 outline-primary-200 transition-all duration-300'
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Link href={url} target='_blank'>
-              <i className='fa-brands fa-github text-3xl w-8 h-8 dark:text-secondary-400 text-primary-300 transition-all duration-300' />
-            </Link>
-          </Button>
+            <Button
+              className='items-center justify-center rounded-full bg-black/50 shadow-none hover:shadow-none pointer-events-auto p-2 outline-2 outline dark:outline-secondary-400 outline-primary-200 transition-all duration-300'
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Link href={url} target='_blank'>
+                <i className='fa-brands fa-github text-3xl w-8 h-8 dark:text-secondary-400 text-primary-300 transition-all duration-300' />
+              </Link>
+            </Button>
+          </div>
         </AccordionHeader>
       
         <AccordionBody className='dark:bg-secondary-900/80 bg-primary-200/50 transition-all duration-300 p-0 min-h-[30vh] h-full overflow-y-auto py-8'>
-          <AccordionMarkdown description={description} />
+          <div className='lg:mx-28'>
+            <AccordionMarkdown description={description} />
+          </div>
         </AccordionBody>
       </Accordion>
     </>
