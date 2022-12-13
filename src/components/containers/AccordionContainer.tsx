@@ -60,7 +60,7 @@ const AccordionContainer = ({ projectData, idx, onClick, openedAccordion, descri
         </AccordionHeader>
       
         <AccordionBody className='dark:bg-secondary-900/80 bg-primary-200/50 transition-all duration-300 p-0 min-h-[30vh] h-full overflow-y-auto py-8'>
-          <div className='lg:mx-28'>
+          <div className='mx-4 lg:mx-28'>
             <AccordionMarkdown description={description} />
           </div>
         </AccordionBody>

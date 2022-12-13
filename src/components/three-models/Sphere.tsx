@@ -1,7 +1,8 @@
 import { Suspense } from 'react';
-import { Sphere, OrbitControls, MeshDistortMaterial } from '@react-three/drei';
+import { Sphere, OrbitControls } from '@react-three/drei';
 
 import useDarkMode from '../../hooks/useDarkMode';
+import useScrollPosition from '../../hooks/useScrollPosition';
 
 interface Props {
   quality?: number;
@@ -12,6 +13,8 @@ const MySphere = ({ quality = 8, scale = 3 }: Props) => {
 
   const { isDarkTheme } = useDarkMode();
 
+  const { x, y } = useScrollPosition();
+
   return (
     <>
       <ambientLight color={isDarkTheme ? '#72d4ee' : '#036248'} />
@@ -20,6 +23,7 @@ const MySphere = ({ quality = 8, scale = 3 }: Props) => {
         <Sphere
           visible
           args={[1, quality, quality]}
+          rotation={[0, (y * 0.0025), 0]}
           scale={scale}
         >
           <meshPhysicalMaterial

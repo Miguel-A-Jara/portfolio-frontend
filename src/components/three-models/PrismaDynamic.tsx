@@ -1,12 +1,15 @@
-import { Suspense, useState } from 'react';
+import { Suspense, useMemo } from 'react';
 import { Sphere, OrbitControls, MeshDistortMaterial } from '@react-three/drei';
 
 import useDarkMode from '../../hooks/useDarkMode';
+import useScrollPosition from '../../hooks/useScrollPosition';
 
 const PrismaDynamic = () => {
 
+  const { y } = useScrollPosition();
   const { isDarkTheme } = useDarkMode();
-  const [value, setValue] = useState(Math.random() * 4);
+
+  const randomNumber = useMemo(() => Math.random() * 5, []);
 
   return (
     <>
@@ -15,13 +18,14 @@ const PrismaDynamic = () => {
       <Suspense fallback={null}>
         <Sphere
           visible
-          args={[0.5, value, value]}
-          scale={4}
+          args={[0.5, randomNumber, randomNumber]}
+          rotation={[0, 0, (y * 0.0025)]}
+          scale={3}
         >
           <MeshDistortMaterial 
             color={isDarkTheme ? '#147ba6' : '#007c5b'}
             wireframe
-            speed={1}
+            speed={3}
           />
           <OrbitControls
             autoRotate={true}

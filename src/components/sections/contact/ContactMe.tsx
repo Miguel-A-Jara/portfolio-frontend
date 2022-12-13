@@ -16,16 +16,16 @@ const ContactMe = () => {
     <motion.h1 
       initial={{ translateX: -100, opacity: 0 }} whileInView={{ translateX: 0, opacity: 1 }} 
       transition={{ duration: 1, delay: 0.3 }}
-      className='font-mono font-bold text-5xl lg:text-7xl text-center 
+      className='font-mono font-bold text-4xl lg:text-7xl text-center
       dark:text-secondary-400 text-primary-200 w-full max-w-3xl'
     >
       { i18n.language === 'en' ? 'Contact Me' : 'Contáctame' }
     </motion.h1>
 
-      <div className='sm:px-4 py-8 max-w-6xl gap-8 flex flex-wrap lg:flex-nowrap justify-between items-start'>
-        <ContactForm />
-        <PersonalDataContainer />
-      </div>
+    <div className='px-4 py-8 w-full max-w-6xl gap-8 flex flex-wrap lg:flex-nowrap justify-between items-start'>
+      <ContactForm />
+      <PersonalDataContainer />
+    </div>
       
     </div>
   )

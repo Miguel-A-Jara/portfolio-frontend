@@ -31,11 +31,11 @@ const ProjectsBuilt = () => {
     <motion.h1 
       initial={{ translateX: -100, opacity: 0 }} whileInView={{ translateX: 0, opacity: 1 }} 
       transition={{ duration: 1, delay: 0.3 }}
-      className='font-mono font-bold text-5xl lg:text-7xl text-center 
+      className='font-mono font-bold text-4xl lg:text-7xl text-center 
       dark:text-secondary-400 text-primary-100 w-full max-w-3xl'
     >
       <span>{ i18n.language === 'en' ? 'My Projects' : 'Mis Proyectos' }</span>
-      <i className='fa-solid fa-briefcase ml-4 text-6xl'/>
+      <i className='fa-solid fa-briefcase ml-4 text-4xl lg:text-6xl'/>
 
     </motion.h1>
 
@@ -55,7 +55,7 @@ const ProjectsBuilt = () => {
       </div>
 
       <CanvasContainer className='absolute h-96 -left-32 top-1/2 -translate-y-1/2'>
-        <MySphere quality={width < 768 ? 6 : 14} scale={3} />
+        <MySphere quality={width < 768 ? 6 : 8} scale={3} />
       </CanvasContainer>
 
       <CanvasContainer className='absolute w-64 h-64 bottom-0 left-[calc(100%-10em)] lg:-right-20
